@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kamala Kafle | Projects Showcase</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-surface-variant": "#e7bdb7",
+                        "on-secondary": "#313030",
+                        "surface-tint": "#ffb4aa",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "tertiary-container": "#1d9cc3",
+                        "outline-variant": "#5d3f3b",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#292a2a",
+                        "secondary-container": "#474746",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "surface-base": "#000000",
+                        "on-background": "#e3e2e2",
+                        "surface-container-highest": "#343535",
+                        "surface": "#121414",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "surface-container": "#1f2020",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-variant": "#343535",
+                        "background": "#121414",
+                        "text-secondary": "#A1A1AA",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "on-primary-fixed-variant": "#930005",
+                        "on-tertiary": "#003545",
+                        "primary": "#ffb4aa",
+                        "on-tertiary-fixed": "#001f29",
+                        "on-surface": "#e3e2e2",
+                        "surface-elevated": "#0A0A0A",
+                        "tertiary": "#68d3fc",
+                        "on-primary-fixed": "#410001",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#5c0002",
+                        "on-primary": "#690003",
+                        "tertiary-fixed": "#bbe9ff",
+                        "on-tertiary-container": "#002e3c",
+                        "surface-dim": "#121414",
+                        "secondary-fixed": "#e5e2e1",
+                        "border-subtle": "#262626",
+                        "inverse-primary": "#c0000a",
+                        "error": "#ffb4ab",
+                        "outline": "#ad8883",
+                        "text-primary": "#FFFFFF",
+                        "inverse-surface": "#e3e2e2",
+                        "surface-container-low": "#1b1c1c",
+                        "primary-container": "#ff5545",
+                        "inverse-on-surface": "#303031",
+                        "surface-bright": "#383939",
+                        "primary-fixed": "#ffdad5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Space Grotesk"],
+                        "code-sm": ["JetBrains Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="custom-scrollbar overflow-x-hidden">
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="progress-bar" style="width: 0%"></div>
+    <!-- Top Navigation -->
+    <header
+        class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-border-subtle h-16">
+        <nav
+            class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <a href="home.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+                <span
+                    class="font-code-sm text-code-sm text-primary uppercase tracking-tighter">~/kamala/portfolio</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:text-primary duration-200"
+                    href="home.html">Home</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
+                    href="project.html">Projects</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:text-primary duration-200"
+                    href="about.html#tech-stack">Tech Stack</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:text-primary duration-200"
+                    href="about.html#experience">Experience</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:text-primary duration-200"
+                    href="contact.html">Contact</a>
+            </div>
+            <button class="md:hidden text-on-surface-variant" onclick="toggleDrawer()">
+                <span class="material-symbols-outlined" data-icon="menu">menu</span>
+            </button>
+        </nav>
+    </header>
+    <!-- NavigationDrawer (Mobile Only Overlay) -->
+    <div class="fixed inset-0 bg-black/60 z-[70] hidden backdrop-blur-sm" id="drawer-overlay" onclick="toggleDrawer()">
+    </div>
+    <aside
+        class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-highest dark:bg-surface-container-highest shadow-xl z-[80] -translate-x-full transition-transform duration-300 flex flex-col py-6 rounded-r-xl border-r border-border-subtle"
+        id="drawer">
+        <div class="px-6 mb-8 flex flex-col gap-1">
+            <div
+                class="w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center mb-4 border border-primary/30 overflow-hidden">
+                <img alt="Kamala Kafle Portrait" class="w-full h-full object-cover" src="Profile.jpg" />
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-primary leading-none">Kamala Kafle</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">ICT Student &amp; Developer</p>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
+                href="home.html">
+                <span class="material-symbols-outlined" data-icon="home">home</span>
+                <span class="font-body-md text-body-md">Home</span>
+            </a>
+            <a class="flex items-center gap-4 bg-primary-container text-on-primary-container rounded-full px-4 py-3 mx-2 active:scale-[0.98]"
+                href="project.html">
+                <span class="material-symbols-outlined" data-icon="code">code</span>
+                <span class="font-body-md text-body-md">Projects</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
+                href="about.html#tech-stack">
+                <span class="material-symbols-outlined" data-icon="stack">stack</span>
+                <span class="font-body-md text-body-md">Tech Stack</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
+                href="about.html#experience">
+                <span class="material-symbols-outlined" data-icon="work">work</span>
+                <span class="font-body-md text-body-md">Experience</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
+                href="contact.html">
+                <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                <span class="font-body-md text-body-md">Contact</span>
+            </a>
+        </nav>
+        <div class="mt-auto px-6 text-on-surface-variant font-code-sm text-code-sm opacity-50">
+            v1.0.4
+        </div>
+    </aside>
+    <main class="pt-32 pb-24">
+        <!-- Hero / Section Header -->
+        <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="h-px w-12 bg-primary"></div>
+                    <span class="font-code-sm text-code-sm text-primary uppercase tracking-widest">Selected Works</span>
+                </div>
+                <h1
+                    class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface max-w-3xl">
+                    Engineering <span class="text-primary italic">Precision</span> into every pixel.
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-4">
+                    A curated showcase of engineering solutions, web applications, and system designs developed by
+                    Kamala Kafle.
+                </p>
+            </div>
+        </section>
+        <!-- Projects Grid -->
+        <section
+            class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+            <!-- Project Card 1: Project FireHalt -->
+            <article
+                class="group hover-card border border-border-subtle bg-surface-elevated transition-all duration-300 rounded-xl overflow-hidden flex flex-col h-full">
+                <div class="aspect-video overflow-hidden bg-surface-container-low border-b border-border-subtle">
+                    <img alt="Project FireHalt Preview"
+                        class="project-image w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mp3wIvfPChL4vlYtASPrQhjlzZbWJd2ZtDGQZPsmjbpUw-xIPZu3q3B-anYM7Qjr0uwcflqIFozjDvySyMajeGHv0Kfb7CPYV1fxKTzjQLPC_pXMiFwppxbqkt_ULO3M6zRfcjVwHQG_zxkH_fZraxh51FCU6UjSlDTSQwZVeB3pLiB351f1yEez63vef7pam3JsREE42SDD9JSzBTG2Oi6PXzPCCx3KI4iVjsiUgWg42M-DjzhlS3TPyYa4bkDl70EEm09oaEg" />
+                </div>
+                <div class="p-8 flex flex-col gap-6 flex-grow">
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">Arduino</span>
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">Sensors</span>
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">C/C++</span>
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">IoT</span>
+                        <span
+                            class="px-3 py-1 bg-surface-container border border-border-subtle text-on-surface-variant font-code-sm text-code-sm rounded-full">OCT 2024</span>
+                    </div>
+                    <div class="flex flex-col gap-2 flex-grow">
+                        <div class="flex items-center gap-3 flex-wrap">
+                            <h3
+                                class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                                Project FireHalt</h3>
+                            <span
+                                class="text-[10px] bg-primary text-on-primary px-2 py-0.5 rounded font-label-caps uppercase tracking-tighter">Award
+                                Winner</span>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 font-body-md text-body-md text-on-surface-variant flex-grow">
+                            <li>Developed a real-time fire detection and emergency alarm system using integrated flame
+                                and smoke sensors with automated alert mechanisms for residential safety applications.
+                            </li>
+                            <li>Configured microcontrollers and sensor modules to build a live tabletop simulation
+                                prototype demonstrating hazard detection, emergency response workflows, and hardware
+                                reliability.</li>
+                            <li>Presented system architecture and implementation strategies during technical
+                                evaluations, contributing to receiving the "Most Talented" recognition by NepaTronix.
+                            </li>
+                        </ul>
+                    </div>
+                    <!--  <div class="flex items-center gap-6 mt-4">
+                        <a class="flex items-center gap-2 font-code-sm text-code-sm text-primary hover:translate-x-1 transition-transform"
+                            href="https://github.com/Kusum242" target="_blank">
+                            <span class="material-symbols-outlined text-[18px]" data-icon="terminal">terminal</span>
+                            View Documentation
+                        </a>
+                    </div> -->
+                </div>
+            </article>
+            <!-- Project Card 2: Smart Quiz Assessment Platform -->
+            <article
+                class="group hover-card border border-border-subtle bg-surface-elevated transition-all duration-300 rounded-xl overflow-hidden flex flex-col h-full">
+                <div class="aspect-video overflow-hidden bg-surface-container-low border-b border-border-subtle">
+                    <img alt="Smart Quiz Preview"
+                        class="project-image w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRLaGxGwoaY8u9RYuqJbGaBwZrxfBwLGKyGwVo-GBg0zS0vK1Kscs3PQwOmmQ0MHwpJvWZX8WnRizzRLQg7X4oSsrQeD9LIveM3BQ1ocQy0BNSbguB8ChPU8CoUBci5AJaJavwzuC_32CLSVMmakSDOm0PGFGcIB5ercwd6dCZDr8EeyvDcdTDdi0QrZvzYEMAoDu_2pW2KMuIFgOIktXVRCAWLiDUR2KeXt5xY87F5vAoamlQ62WjeqPrLdDV19hKODDKLjB85ew" />
+                </div>
+                <div class="p-8 flex flex-col gap-6 flex-grow">
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">Python</span>
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">Django</span>
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">MySQL</span>
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">JS</span>
+                        <span
+                            class="px-3 py-1 bg-surface-container border border-border-subtle text-on-surface-variant font-code-sm text-code-sm rounded-full">SEP – DEC 2025</span>
+                    </div>
+                    <div class="flex flex-col gap-2 flex-grow">
+                        <h3
+                            class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                            Smart Quiz Platform</h3>
+                        <ul class="list-disc pl-5 space-y-2 font-body-md text-body-md text-on-surface-variant flex-grow">
+                            <li>Developed a responsive web-based examination platform supporting secure student testing and
+                                automated evaluation management.</li>
+                            <li>Implemented role-based authentication systems separating teacher dashboards from student
+                                examination environments to improve platform security and usability.</li>
+                            <li>Built automated JavaScript-based grading functionality, reducing manual result processing
+                                time and improving examination efficiency.</li>
+                        </ul>
+                    </div>
+                    <!--  <div class="flex items-center gap-4 mt-2">
+                        <a class="flex items-center gap-2 font-code-sm text-code-sm text-on-surface-variant hover:text-on-surface"
+                            href="https://github.com/Kusum242" target="_blank">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="open_in_new">open_in_new</span>
+                            Live Demo
+                        </a>
+                    </div>. -->
+                </div>
+            </article>
+            <!-- Project Card 3: EduStream CMS -->
+            <article
+                class="group hover-card border border-border-subtle bg-surface-elevated transition-all duration-300 rounded-xl overflow-hidden flex flex-col h-full">
+                <div class="aspect-video overflow-hidden bg-surface-container-low border-b border-border-subtle">
+                    <img alt="EduStream CMS Preview"
+                        class="project-image w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeaqVNUdfu0LppbTUp-vaChTdEh2PDU7GN4bHzD2t3pKDVDAsVxNt1O_G0IhwfI3zUPuaLqAt2Fb1LpLEuUnfKjUOBuYOq_WuQ6Jy5HHjznvi8oGPqJkhcKlQSsO3b_S8EC7EghPLYFOz_Unz_qfbFgb4ZGMScPpjRo_s3RDwzacndeXyyttR0yExITngnerpY78L93vikNJQ1kMrtVbspv3JfMOxxU_JgdqVH7ov-1OI5zJbe1wsClVFw6wZgb94a-HWtOH1alU8" />
+                </div>
+                <div class="p-8 flex flex-col gap-6 flex-grow">
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">HTML/CSS</span>
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">Bootstrap</span>
+                        <span
+                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps rounded-full">JS</span>
+                        <span
+                            class="px-3 py-1 bg-surface-container border border-border-subtle text-on-surface-variant font-code-sm text-code-sm rounded-full">MAY – AUG 2025</span>
+                    </div>
+                    <div class="flex flex-col gap-2 flex-grow">
+                        <h3
+                            class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                            EduStream CMS</h3>
+                        <ul class="list-disc pl-5 space-y-2 font-body-md text-body-md text-on-surface-variant flex-grow">
+                            <li>Collaborated within a three-member development team to build a centralized
+                                educational resource platform for hosting assignments, PDFs, and video materials.
+                            </li>
+                            <li>Implemented dynamic filtering functionality enabling efficient organization of
+                                educational resources by grade level and subject categories.</li>
+                            <li>Managed collaborative workflows using Git and GitHub, including version control,
+                                feature branching, and merge conflict resolution.</li>
+                        </ul>
+                    </div>
+                    <!--  <div class="flex items-center gap-6">
+                        <a class="flex items-center gap-2 font-code-sm text-code-sm text-primary hover:translate-x-1 transition-transform"
+                            href="https://github.com/Kusum242" target="_blank">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="open_in_new">open_in_new</span>
+                            View Project
+                        </a>
+                        <a class="flex items-center gap-2 font-code-sm text-code-sm text-on-surface-variant hover:text-on-surface"
+                            href="https://github.com/Kusum242" target="_blank">
+                            <span class="material-symbols-outlined text-[18px]" data-icon="terminal">terminal</span>
+                            GitHub
+                        </a>
+                    </div>. -->
+                </div>
+            </article>
+        </section>
+        <!-- CTA Section -->
+        <section class="mt-48 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+            <div class="py-24 border-y border-border-subtle relative overflow-hidden group">
+                <div
+                    class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Have a technical challenge?</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto mb-10">
+                    I'm always looking for ambitious projects and collaborative opportunities in engineering and
+                    full-stack development.
+                </p>
+                <a href="contact.html"
+                    class="inline-block bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-lg active:scale-95 transition-all duration-200 hover:brightness-110 tracking-widest uppercase">
+                    Get in touch
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-12 border-t border-border-subtle bg-surface-base dark:bg-surface-base">
+        <div
+            class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col items-center gap-6 text-center">
+            <div class="flex flex-col items-center gap-2">
+                <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest text-lg">Kamala
+                    Kafle</span>
+                <span class="text-on-surface-variant font-code-sm text-code-sm">© 2026</span>
+            </div>
+            <div class="flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm hover:text-primary transition-colors hover:translate-y-[-2px] transition-transform duration-200"
+                    href="https://github.com/Kusum242" target="_blank">GitHub</a>
+                <a class="text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm hover:text-primary transition-colors hover:translate-y-[-2px] transition-transform duration-200"
+                    href="https://linkedin.com/in/kamala-kafle-ict" target="_blank">LinkedIn</a>
+                <a class="text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm hover:text-primary transition-colors hover:translate-y-[-2px] transition-transform duration-200"
+                    href="mailto:kaflekushum@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

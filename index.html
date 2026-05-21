@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamala Kafle</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Instant client-side redirect to home.html -->
+    <meta http-equiv="refresh" content="0; url=home.html">
+    <script>
+        window.location.replace("home.html");
+    </script>
+    <style>
+        body {
+            background-color: #121414;
+            color: #e3e2e2;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .loader {
+            text-align: center;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 180, 170, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #ffb4aa;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        p {
+            margin: 4px 0;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+        <p>Connecting to ~/kamala/portfolio...</p>
+        <p style="font-size: 12px; opacity: 0.5; margin-top: 8px;">
+            If you are not redirected automatically, <a href="home.html"
+                style="color: #ffb4aa; text-decoration: underline;">click here</a>.
+        </p>
+    </div>
+</body>
+
+</html>

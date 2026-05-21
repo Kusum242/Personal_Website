@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kamala Kafle - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-surface-variant": "#e7bdb7",
+                        "on-secondary": "#313030",
+                        "surface-tint": "#ffb4aa",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "tertiary-container": "#1d9cc3",
+                        "outline-variant": "#5d3f3b",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#292a2a",
+                        "secondary-container": "#474746",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "surface-base": "#000000",
+                        "on-background": "#e3e2e2",
+                        "surface-container-highest": "#343535",
+                        "surface": "#121414",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "surface-container": "#1f2020",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-variant": "#343535",
+                        "background": "#121414",
+                        "text-secondary": "#A1A1AA",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "on-primary-fixed-variant": "#930005",
+                        "on-tertiary": "#003545",
+                        "primary": "#ffb4aa",
+                        "on-tertiary-fixed": "#001f29",
+                        "on-surface": "#e3e2e2",
+                        "surface-elevated": "#0A0A0A",
+                        "tertiary": "#68d3fc",
+                        "on-primary-fixed": "#410001",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#5c0002",
+                        "on-primary": "#690003",
+                        "tertiary-fixed": "#bbe9ff",
+                        "on-tertiary-container": "#002e3c",
+                        "surface-dim": "#121414",
+                        "secondary-fixed": "#e5e2e1",
+                        "border-subtle": "#262626",
+                        "inverse-primary": "#c0000a",
+                        "error": "#ffb4ab",
+                        "outline": "#ad8883",
+                        "text-primary": "#FFFFFF",
+                        "inverse-on-surface": "#303031",
+                        "surface-bright": "#383939",
+                        "primary-fixed": "#ffdad5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Space Grotesk"],
+                        "code-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "code-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+    <div class="scroll-progress" id="progress-bar" style="width: 0%"></div>
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 border-b border-border-subtle bg-background/80 dark:bg-background/80 backdrop-blur-xl">
+        <nav
+            class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <a href="home.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined text-primary">terminal</span>
+                <span
+                    class="font-code-sm text-code-sm text-primary uppercase tracking-tighter">~/kamala/portfolio</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
+                    href="home.html">Home</a>
+                <a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md hover:text-primary transition-all duration-200"
+                    href="project.html">Projects</a>
+                <a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md hover:text-primary transition-all duration-200"
+                    href="about.html#tech-stack">Tech Stack</a>
+                <a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md hover:text-primary transition-all duration-200"
+                    href="about.html#experience">Experience</a>
+                <a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md hover:text-primary transition-all duration-200"
+                    href="contact.html">Contact</a>
+            </div>
+            <button class="md:hidden text-primary active:scale-95 transition-transform" onclick="toggleDrawer()">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </nav>
+    </header>
+    <!-- NavigationDrawer (Mobile Only Overlay) -->
+    <div class="fixed inset-0 bg-black/60 z-[70] hidden backdrop-blur-sm" id="drawer-overlay" onclick="toggleDrawer()">
+    </div>
+    <aside
+        class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-highest dark:bg-surface-container-highest shadow-xl z-[80] -translate-x-full transition-transform duration-300 flex flex-col py-6 rounded-r-xl border-r border-border-subtle"
+        id="drawer">
+        <div class="px-6 mb-8 flex flex-col gap-1">
+            <div
+                class="w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center mb-4 border border-primary/30 overflow-hidden">
+                <img alt="Kamala Kafle Portrait" class="w-full h-full object-cover" src="Profile.jpg" />
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-primary leading-none">Kamala Kafle</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">ICT Student &amp; Developer</p>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a class="flex items-center gap-4 bg-primary-container text-on-primary-container rounded-full px-4 py-3 mx-2 active:scale-[0.98]"
+                href="home.html">
+                <span class="material-symbols-outlined" data-icon="home">home</span>
+                <span class="font-body-md text-body-md">Home</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
+                href="project.html">
+                <span class="material-symbols-outlined" data-icon="code">code</span>
+                <span class="font-body-md text-body-md">Projects</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
+                href="about.html#tech-stack">
+                <span class="material-symbols-outlined" data-icon="stack">stack</span>
+                <span class="font-body-md text-body-md">Tech Stack</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
+                href="about.html#experience">
+                <span class="material-symbols-outlined" data-icon="work">work</span>
+                <span class="font-body-md text-body-md">Experience</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
+                href="contact.html">
+                <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                <span class="font-body-md text-body-md">Contact</span>
+            </a>
+        </nav>
+        <div class="mt-auto px-6 text-on-surface-variant font-code-sm text-code-sm opacity-50">
+            v1.0.4
+        </div>
+    </aside>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-32">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="flex-1 space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        <span class="font-label-caps text-label-caps text-primary uppercase">Available for Internship
+                            2026</span>
+                    </div>
+                    <h1
+                        class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-text-primary">
+                        Award Winning BICTE <br />
+                        <span class="text-primary">Student</span> and <br />
+                        Full-Stack Developer.
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-secondary max-w-xl">
+                        Award Winning BICTE Student with strong expertise in Full-Stack Web Development and Hands-on IoT
+                        prototyping, recognized by NepaTronix for excellence in logic and technical presentation.
+                        Seeking an IT or Software Engineering internship to build scalable digital solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="project.html"
+                            class="inline-block text-center px-8 py-4 bg-primary text-on-primary font-bold rounded-lg active:scale-95 transition-all duration-200 hover:brightness-110">
+                            View Projects
+                        </a>
+                        <a href="contact.html"
+                            class="inline-block text-center px-8 py-4 border border-border-subtle hover:border-primary text-text-primary font-bold rounded-lg active:scale-95 transition-all duration-200 bg-surface-elevated">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-1 relative">
+                    <div
+                        class="aspect-square w-full max-w-md mx-auto rounded-xl overflow-hidden border border-border-subtle bg-surface-container relative z-10">
+                        <img alt="Kamala Kafle" class="w-full h-full object-cover profile-shake"
+                            data-alt="A professional studio portrait of a female IT professional. High contrast, dark background, technical aesthetic."
+                            src="Profile.jpg" />
+                    </div>
+                    <!-- Decorative Element -->
+                    <div class="absolute -top-4 -right-4 w-full h-full border border-primary/20 rounded-xl -z-0"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Work Section -->
+        <section class="py-24 bg-surface-container-low border-y border-border-subtle overflow-hidden">
+            <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+                <div class="mb-16">
+                    <h2 class="font-headline-lg text-headline-lg text-text-primary mb-4 hanging-indent">Featured Work
+                    </h2>
+                    <div class="w-12 h-1 bg-primary"></div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+                    <!-- Project Card 1 -->
+                    <div
+                        class="group hover-card border border-border-subtle rounded-xl p-6 transition-all duration-300 flex flex-col gap-6 bg-surface-elevated">
+                        <div
+                            class="aspect-video overflow-hidden rounded-lg bg-surface-container-highest border border-border-subtle">
+                            <img alt="Project FireHalt"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                                data-alt="Close up of an Arduino board with various sensors and wiring, glowing indicator lights, focused technical photography."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYAXKtYYoQ46ZI0ngN1ktNi8L3TA-GFm0leeWMShQbBvUoDarkVBLpwv6wBRha34U_CjaDi5xBTHTVuHkFhMLE1BcAcAUhiyxs8nLUWxX7t5lxERKSQw07F5pOy7k5uVHYk1uYiNSVVQsuGvrlVmZFVZJ4TDOQ6AXQ9f1_vbV64ReKzAfMpSj3qKeXZRq33KjfpHjKf8qze37RON5Pd9rk4kwafdfoXHIf_EcIkaVAyq1c5KAT-xJ9ZSoZIX3o2cCRYpLy_1vbvTc" />
+                        </div>
+                        <div class="space-y-4 flex-grow flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-start">
+                                    <h3
+                                        class="font-headline-md text-headline-md text-text-primary group-hover:text-primary transition-colors">
+                                        Project FireHalt</h3>
+                                    <span class="font-code-sm text-code-sm text-primary">2024</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-secondary">
+                                    An advanced IoT-based fire safety system utilizing Arduino and C++ for real-time
+                                    sensor monitoring and emergency response.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">ARDUINO</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">C/C++</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">IOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div
+                        class="group hover-card border border-border-subtle rounded-xl p-6 transition-all duration-300 flex flex-col gap-6 bg-surface-elevated">
+                        <div
+                            class="aspect-video overflow-hidden rounded-lg bg-surface-container-highest border border-border-subtle">
+                            <img alt="Smart Quiz Platform"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                                data-alt="A minimalist web application interface showing a quiz dashboard with progress charts and elegant typography."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSlHj9Opwt4InA0JUKRttaVGmC1ziLA9mCNqbKoo-fhqtTH1xDq2Os95eVMOoVvnqqOcO8WpObh_bKos3u5nR6Mgh5_8BAazFfJg0-2l-YW-QyfgaG20ikp5RSHK_Q3zUO5MQk9G6R6zHh8PVntoBCeg2eyaYJfq5r3dwxsaWvOxp2DR0zDQuqK3_arFu3VvYGITMMk3MXUnjv0selJwra1vsa4svXMUDREHwA2K5oBkFYhsP65VL-0WOhFoLFJKJHFrw4gQBPvUk" />
+                        </div>
+                        <div class="space-y-4 flex-grow flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-start">
+                                    <h3
+                                        class="font-headline-md text-headline-md text-text-primary group-hover:text-primary transition-colors">
+                                        Smart Quiz Platform</h3>
+                                    <span class="font-code-sm text-code-sm text-primary">2025</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-secondary">
+                                    A responsive web-based examination platform supporting secure student testing,
+                                    role-based authentication, and automated grading.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">PYTHON</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">DJANGO</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">MYSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div
+                        class="group hover-card border border-border-subtle rounded-xl p-6 transition-all duration-300 flex flex-col gap-6 bg-surface-elevated">
+                        <div
+                            class="aspect-video overflow-hidden rounded-lg bg-surface-container-highest border border-border-subtle">
+                            <img alt="EduStream CMS"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                                data-alt="Educational website interface listing course materials and video downloads with standard tags."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeaqVNUdfu0LppbTUp-vaChTdEh2PDU7GN4bHzD2t3pKDVDAsVxNt1O_G0IhwfI3zUPuaLqAt2Fb1LpLEuUnfKjUOBuYOq_WuQ6Jy5HHjznvi8oGPqJkhcKlQSsO3b_S8EC7EghPLYFOz_Unz_qfbFgb4ZGMScPpjRo_s3RDwzacndeXyyttR0yExITngnerpY78L93vikNJQ1kMrtVbspv3JfMOxxU_JgdqVH7ov-1OI5zJbe1wsClVFw6wZgb94a-HWtOH1alU8" />
+                        </div>
+                        <div class="space-y-4 flex-grow flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-start">
+                                    <h3
+                                        class="font-headline-md text-headline-md text-text-primary group-hover:text-primary transition-colors">
+                                        EduStream CMS</h3>
+                                    <span class="font-code-sm text-code-sm text-primary">2025</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-secondary">
+                                    Centralized resources platform for assignments and material management with
+                                    grade/subject dynamic filters.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">HTML</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">BOOTSTRAP</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-label-caps border border-primary/20">JS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Technical Capabilities -->
+        <section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="space-y-4 border-l-2 border-primary/30 pl-8">
+                    <span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">code</span>
+                    <h4 class="font-headline-md text-headline-md text-text-primary">Web Dev</h4>
+                    <p class="font-body-md text-body-md text-secondary">Full-stack development with Python, Django, and
+                        modern frontend frameworks. Building scalable web architectures.</p>
+                </div>
+                <div class="space-y-4 border-l-2 border-primary/30 pl-8">
+                    <span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">memory</span>
+                    <h4 class="font-headline-md text-headline-md text-text-primary">IoT &amp; Hardware</h4>
+                    <p class="font-body-md text-body-md text-secondary">Specializing in IoT prototyping with Arduino and
+                        sensors. Award-winning logic and hardware integration.</p>
+                </div>
+                <div class="space-y-4 border-l-2 border-primary/30 pl-8">
+                    <span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">database</span>
+                    <h4 class="font-headline-md text-headline-md text-text-primary">Data Systems</h4>
+                    <p class="font-body-md text-body-md text-secondary">Design and management of relational databases
+                        like MySQL. Focus on data integrity and query optimization.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-12 border-t border-border-subtle bg-surface-base dark:bg-surface-base">
+        <div
+            class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col items-center gap-6 text-center">
+            <div class="flex flex-col items-center gap-2">
+                <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest text-lg">Kamala
+                    Kafle</span>
+                <span class="text-on-surface-variant font-code-sm text-code-sm">© 2026</span>
+            </div>
+            <div class="flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm hover:text-primary transition-colors hover:translate-y-[-2px] transition-transform duration-200"
+                    href="https://github.com/Kusum242" target="_blank">GitHub</a>
+                <a class="text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm hover:text-primary transition-colors hover:translate-y-[-2px] transition-transform duration-200"
+                    href="https://linkedin.com/in/kamala-kafle-ict" target="_blank">LinkedIn</a>
+                <a class="text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm hover:text-primary transition-colors hover:translate-y-[-2px] transition-transform duration-200"
+                    href="mailto:kaflekushum@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
