@@ -124,27 +124,64 @@ document.addEventListener('DOMContentLoaded', () => {
         fadeInUpObserver.observe(card);
     });
 
-    // Contact Form submission logic (simulated transmission)
-    const contactForm = document.querySelector('form');
+    // Contact Form submission logic (posts to backend /send)
+    const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const submitBtn = document.getElementById('contact-submit');
+            const statusDiv = document.getElementById('contact-status');
             if (!submitBtn) return;
 
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Transmission Sent...';
-            submitBtn.disabled = true;
-            submitBtn.classList.remove('bg-primary');
-            submitBtn.classList.add('bg-green-600');
+            const formData = {
+                name: contactForm.querySelector('[name="name"]').value,
+                email: contactForm.querySelector('[name="email"]').value,
+                subject: contactForm.querySelector('[name="subject"]').value,
+                message: contactForm.querySelector('[name="message"]').value,
+            };
 
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
+            submitBtn.disabled = true;
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending...';
+
+            try {
+                const res = await fetch('/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (res.ok) {
+                    statusDiv.textContent = 'Message sent — I will reply soon!';
+                    statusDiv.classList.remove('text-red-500');
+                    statusDiv.classList.add('text-green-500');
+                    contactForm.reset();
+                } else {
+                    const err = await res.json().catch(() => ({}));
+                    statusDiv.textContent = err.error || 'Failed to send message — please try again later.';
+                    statusDiv.classList.remove('text-green-500');
+                    statusDiv.classList.add('text-red-500');
+                }
+            } catch (error) {
+                // Fallback message when backend is not available
+                statusDiv.textContent = 'Unable to reach mail server. Run the backend or configure an external form service.';
+                statusDiv.classList.remove('text-green-500');
+                statusDiv.classList.add('text-red-500');
+            } finally {
                 submitBtn.disabled = false;
-                submitBtn.classList.add('bg-primary');
-                submitBtn.classList.remove('bg-green-600');
-                contactForm.reset();
-            }, 3000);
+                submitBtn.innerHTML = originalText;
+            }
         });
+    }
+
+    // If the page was loaded with a hash (e.g., about.html#experience), scroll to it smoothly
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            // Small timeout to allow layout and any other scripts to settle
+            setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }, 80);
+        }
     }
 });

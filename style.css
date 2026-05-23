@@ -172,3 +172,8 @@ ul.list-disc li::marker {
     80% { transform: rotate(1.5deg) scale(1.02); }
 }
 
+/* Ensure in-page links to the Experience section land at the top (account for fixed header) */
+#experience {
+    scroll-margin-top: 6rem; /* adjust if your header height changes */
+}
+

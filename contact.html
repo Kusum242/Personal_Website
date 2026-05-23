@@ -129,8 +129,6 @@
                 <a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md hover:text-primary transition-all duration-200"
                     href="project.html">Projects</a>
                 <a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md hover:text-primary transition-all duration-200"
-                    href="about.html#tech-stack">Tech Stack</a>
-                <a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md hover:text-primary transition-all duration-200"
                     href="about.html#experience">Experience</a>
                 <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
                     href="contact.html">Contact</a>
@@ -167,9 +165,9 @@
                 <span class="font-body-md text-body-md">Projects</span>
             </a>
             <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
-                href="about.html#tech-stack">
+                href="about.html#experience">
                 <span class="material-symbols-outlined" data-icon="stack">stack</span>
-                <span class="font-body-md text-body-md">Tech Stack</span>
+                <span class="font-body-md text-body-md">Experience</span>
             </a>
             <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container rounded-full transition-colors active:scale-[0.98]"
                 href="about.html#experience">
@@ -204,38 +202,39 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
                 <!-- Contact Form Column -->
                 <div class="md:col-span-7">
-                    <form class="space-y-8 bg-surface-container-low p-8 md:p-12 rounded-xl border border-border-subtle">
+                    <form id="contact-form" class="space-y-8 bg-surface-container-low p-8 md:p-12 rounded-xl border border-border-subtle">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="space-y-2">
                                 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Full
                                     Name</label>
-                                <input
+                                <input name="name"
                                     class="w-full bg-transparent border-b border-border-subtle py-3 font-body-md text-on-surface placeholder:text-outline-variant focus:border-primary focus:ring-0 transition-colors"
-                                    placeholder="Your Name" type="text" />
+                                    placeholder="Your Name" type="text" required />
                             </div>
                             <div class="space-y-2">
                                 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Email
                                     Address</label>
-                                <input
+                                <input name="email"
                                     class="w-full bg-transparent border-b border-border-subtle py-3 font-body-md text-on-surface placeholder:text-outline-variant focus:border-primary focus:ring-0 transition-colors"
-                                    placeholder="email@example.com" type="email" />
+                                    placeholder="email@example.com" type="email" required />
                             </div>
                         </div>
                         <div class="space-y-2">
                             <label
                                 class="font-label-caps text-label-caps text-on-surface-variant uppercase">Subject</label>
-                            <input
+                            <input name="subject"
                                 class="w-full bg-transparent border-b border-border-subtle py-3 font-body-md text-on-surface placeholder:text-outline-variant focus:border-primary focus:ring-0 transition-colors"
-                                placeholder="Project Inquiry" type="text" />
+                                placeholder="Project Inquiry" type="text" required />
                         </div>
                         <div class="space-y-2">
                             <label
                                 class="font-label-caps text-label-caps text-on-surface-variant uppercase">Message</label>
-                            <textarea
+                            <textarea name="message"
                                 class="w-full bg-transparent border-b border-border-subtle py-3 font-body-md text-on-surface placeholder:text-outline-variant focus:border-primary focus:ring-0 transition-colors resize-none"
-                                placeholder="Tell me about your project or inquiry..." rows="4"></textarea>
+                                placeholder="Tell me about your project or inquiry..." rows="4" required></textarea>
                         </div>
-                        <button
+                        <div id="contact-status" class="text-sm font-body-md text-on-surface-variant"></div>
+                        <button id="contact-submit"
                             class="bg-primary text-on-primary-fixed px-8 py-4 rounded-lg font-label-caps text-label-caps uppercase tracking-widest flex items-center gap-4 group active:scale-95 transition-all"
                             type="submit">
                             Send Transmission

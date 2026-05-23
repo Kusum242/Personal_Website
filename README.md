@@ -68,7 +68,7 @@ All cards and project blocks contain the classes `hover-card` and `article`.
 
 ### 3. Adding/Updating Skills
 To customize your technical matrix in `about.html`:
-- Open `about.html` and look for the `<section id="tech-stack">` block.
+- Open `about.html` and look for the `<section id="experience">` block.
 - Add or edit skill tags using this consistent capsule template:
   ```html
   <span class="bg-surface-container-highest px-3 py-1 rounded text-body-md text-on-surface">Your Skill</span>
@@ -77,3 +77,23 @@ To customize your technical matrix in `about.html`:
 ### 4. Modular Separation of Concerns
 - **Logic**: Do not add inline `<script>` tags to the HTML. Keep your event listeners and DOM actions consolidated inside `main.js`.
 - **Styles**: Keep custom decorative styles in `style.css`. Leverage Tailwind CSS classes inside the HTML pages for standard layout grids, padding, and colors.
+
+## 📨 Enable Contact -> Email
+
+This project includes a tiny optional Node.js backend to forward contact form submissions to your email using SMTP.
+
+Steps to enable:
+
+1. Copy `.env.example` to `.env` and fill the SMTP settings and `TO_EMAIL` with your personal email address.
+2. Install dependencies and start the server. To make testing easy you can serve the static site from the same server by enabling `SERVE_STATIC` in `.env`:
+
+```bash
+cd Kusum_Website
+npm install
+# copy .env.example -> .env and set values, ensure SERVE_STATIC=true to serve files from the same origin
+npm start
+```
+
+3. Open `http://localhost:3000/contact.html` and submit the contact form — messages will be forwarded to the `TO_EMAIL` you set in `.env`.
+
+If you prefer not to run a backend, use a 3rd-party form service (Formspree, Netlify Forms, EmailJS) and update the form handling accordingly.
